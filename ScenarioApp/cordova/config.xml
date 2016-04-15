@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.jslinq.contacts" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>JSLINQ Friend Finder Scenario</name>
+    <description>
+        A contacts app created using WebSharper,
+		demonstrating Cross-Tier Information Flow Control.
+    </description>
+    <author email="jslinq@example.com" href="http://jslinq.example.com">
+        JSLINQ Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="www/icon.png" />
+	<gap:plugin name="org.apache.cordova.contacts" />
+</widget>

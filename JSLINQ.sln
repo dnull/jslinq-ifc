@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Jslinq", "Jslinq\Jslinq.fsproj", "{B1BE0FB6-F7A1-477E-8423-39421FD9F535}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestCases", "TestCases\TestCases.fsproj", "{CF5273FB-F496-4C06-B161-53D1910120B5}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestFixture", "TestFixture\TestFixture.fsproj", "{89A10694-EFAA-483E-A357-D7E8D2912820}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Scenarios", "Scenarios\Scenarios.fsproj", "{6F1D6338-8B3D-4F73-8582-A736D586A133}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScenarioApp", "ScenarioApp\ScenarioApp.fsproj", "{83BCB1A1-52A0-422A-AD12-12312F41B588}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CryptoJS", "CryptoJS\CryptoJS.fsproj", "{676E2622-A852-4665-966F-E5111421D7D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1BE0FB6-F7A1-477E-8423-39421FD9F535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BE0FB6-F7A1-477E-8423-39421FD9F535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BE0FB6-F7A1-477E-8423-39421FD9F535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BE0FB6-F7A1-477E-8423-39421FD9F535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5273FB-F496-4C06-B161-53D1910120B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5273FB-F496-4C06-B161-53D1910120B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5273FB-F496-4C06-B161-53D1910120B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5273FB-F496-4C06-B161-53D1910120B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A10694-EFAA-483E-A357-D7E8D2912820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A10694-EFAA-483E-A357-D7E8D2912820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A10694-EFAA-483E-A357-D7E8D2912820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A10694-EFAA-483E-A357-D7E8D2912820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F1D6338-8B3D-4F73-8582-A736D586A133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F1D6338-8B3D-4F73-8582-A736D586A133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F1D6338-8B3D-4F73-8582-A736D586A133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F1D6338-8B3D-4F73-8582-A736D586A133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BCB1A1-52A0-422A-AD12-12312F41B588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BCB1A1-52A0-422A-AD12-12312F41B588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BCB1A1-52A0-422A-AD12-12312F41B588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BCB1A1-52A0-422A-AD12-12312F41B588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{676E2622-A852-4665-966F-E5111421D7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{676E2622-A852-4665-966F-E5111421D7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{676E2622-A852-4665-966F-E5111421D7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{676E2622-A852-4665-966F-E5111421D7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
