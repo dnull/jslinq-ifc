@@ -16,8 +16,8 @@ namespace Jslinq
 
 module TreeTraversal =
     open Types
-    open Microsoft.FSharp.Compiler.SourceCodeServices
-    open Microsoft.FSharp.Compiler.SourceCodeServices.BasicPatterns
+    open FSharp.Compiler.SourceCodeServices
+    open FSharp.Compiler.SourceCodeServices.BasicPatterns
 
     /// Looks up AST and security type for function or value.
     let tryLookupFunctionOrValue (env : Environment) (func : FSharpMemberOrFunctionOrValue) : SecType option =
@@ -331,7 +331,7 @@ module TreeTraversal =
                         let condition = 
                             f.FullName.StartsWith "Microsoft.FSharp.Core.Operators" ||
                             // Must be directly in ignored module. Nesting not supported with this code.
-                            Option.isSome (SignatureParser.tryGetAttributeArguments<Ignore>(f.LogicalEnclosingEntity.Attributes))
+                            Option.isSome (SignatureParser.tryGetAttributeArguments<Ignore>(f.ApparentEnclosingEntity.Attributes))
 
                         match condition with
                         | true ->

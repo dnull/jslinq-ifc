@@ -17,7 +17,7 @@ namespace Jslinq
 /// Defines custom types for security levels.
 /// Follows the structure given in the paper.
 module Types =
-    open Microsoft.FSharp.Compiler.SourceCodeServices
+    open FSharp.Compiler.SourceCodeServices
     open FSharpx
 
     exception JslinqException of string

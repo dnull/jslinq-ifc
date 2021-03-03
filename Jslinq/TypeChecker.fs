@@ -17,7 +17,7 @@ namespace Jslinq
 module TypeChecker =
     open Types
     open Solve
-    open Microsoft.FSharp.Compiler.SourceCodeServices
+    open FSharp.Compiler.SourceCodeServices
 
     /// Counter for functions, used to add prefix to type variables so that they are unique
     let functionCounter = ref 0
@@ -149,7 +149,7 @@ module TypeChecker =
 
     /// Performs security type check using the specified project file.
     let processProjectFile projectFile =
-        let projOptions = checker.GetProjectOptionsFromProjectFile(projectFile)
+        let projOptions = checker.GetProjectOptionsFromCommandLineArgs(projectFile, null)
 
         /// Compilation result of F# Compiler Services.
         let results =

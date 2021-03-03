@@ -82,7 +82,7 @@ module SignatureParser =
         printfn "%+A" (parse input)
         testLoop ()
 
-    let tryGetAttributeArguments<'a>(attribs : System.Collections.Generic.IList<Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAttribute>) =
+    let tryGetAttributeArguments<'a>(attribs : System.Collections.Generic.IList<FSharp.Compiler.SourceCodeServices.FSharpAttribute>) =
         maybe {
             let attribs = attribs |> List.ofSeq
             let! a = attribs |> List.tryFind (fun a -> a.AttributeType.CompiledName = typeof<'a>.Name)
@@ -90,7 +90,7 @@ module SignatureParser =
         }
 
     /// Tries to retrieve the user-supplied security type signature.
-    let tryGetUserSecType varPrefix (attribs : System.Collections.Generic.IList<Microsoft.FSharp.Compiler.SourceCodeServices.FSharpAttribute>) : UserSecType option =
+    let tryGetUserSecType varPrefix (attribs : System.Collections.Generic.IList<FSharp.Compiler.SourceCodeServices.FSharpAttribute>) : UserSecType option =
         maybe {
             let! args = tryGetAttributeArguments<SecT>(attribs)
             let (_, o) = args.[0]
