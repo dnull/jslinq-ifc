@@ -258,3 +258,4 @@ paket-files/
 *.sln.iml
 
 src/ScenarioApp/cordova/www/index.html
+.ionide

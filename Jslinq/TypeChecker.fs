@@ -149,7 +149,7 @@ module TypeChecker =
 
     /// Performs security type check using the specified project file.
     let processProjectFile projectFile =
-        let projOptions = checker.GetProjectOptionsFromCommandLineArgs(projectFile, null)
+        let projOptions = checker.GetProjectOptionsFromCommandLineArgs(projectFile, [|"..\\Simple\\Program.fs"|])
 
         /// Compilation result of F# Compiler Services.
         let results =
