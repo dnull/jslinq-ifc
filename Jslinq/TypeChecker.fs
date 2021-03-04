@@ -18,6 +18,8 @@ module TypeChecker =
     open Types
     open Solve
     open FSharp.Compiler.SourceCodeServices
+    open Dotnet.ProjInfo.Workspace
+    open Dotnet.ProjInfo.Workspace.FCS
 
     /// Counter for functions, used to add prefix to type variables so that they are unique
     let functionCounter = ref 0
@@ -146,14 +148,11 @@ module TypeChecker =
         /// Processes all declarations of this file recursively
         decls |> List.fold (processDeclaration false) env
 
-
-    /// Performs security type check using the specified project file.
-    let processProjectFile projectFile =
-        let projOptions = checker.GetProjectOptionsFromCommandLineArgs(projectFile, [|"..\\Simple\\Program.fs"|])
-
+    /// Performs security type check using the derived project options
+    let processProjectOptions projectOptions =
         /// Compilation result of F# Compiler Services.
         let results =
-            checker.ParseAndCheckProject(projOptions)
+            checker.ParseAndCheckProject(projectOptions)
             |> Async.RunSynchronously
 
         // Start processing the result obtained from F# Compiler Services.
@@ -164,3 +163,19 @@ module TypeChecker =
         |> List.fold processDeclarations defaultEnv // Start with empty environment.
         |> ignore
         ()
+
+    /// Performs security type check using the specified project file.
+    let processProjectFile projectFile =
+        // https://github.com/fsharp/FSharp.Compiler.Service/issues/905
+        let msbuildLocator = MSBuildLocator()
+        let config = LoaderConfig.Default msbuildLocator
+        let loader = Loader.Create(config)
+        let netFwInfo = NetFWInfo.Create(NetFWInfoConfig.Default msbuildLocator)
+        let fcsBinder = FCSBinder(netFwInfo, loader, checker)
+
+        loader.LoadProjects [projectFile]
+
+        match fcsBinder.GetProjectOptions(projectFile) with
+        | Ok options -> processProjectOptions options
+        | Error e -> failwith ("Failed to process project options: " + e.ToString())
+

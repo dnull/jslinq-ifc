@@ -15,8 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dotnet.ProjInfo.Workspace.FCS" Version="0.44.0" />
     <PackageReference Include="FParsec" Version="1.1.1" />
-    <PackageReference Include="FSharp.Compiler.Service" Version="39.0.3-preview.21102.10" />
+    <PackageReference Include="FSharp.Compiler.Service" Version="37.0.0" />
     <PackageReference Include="FSharpx.Extras" Version="3.0.0" />
     <PackageReference Include="Mindbox.Data.Linq" Version="3.0.2" />
   </ItemGroup>

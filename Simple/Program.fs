@@ -1,16 +1,15 @@
 namespace Simple
 
-open System
 open Jslinq.Types
 
 [<Policy>]
 module Policy =
-    [<SecT("_ -> unit")>]
-    let LogS (s:string) = System.Console.WriteLine s
+    [<SecT("_^H -> _^H")>]
+    let foo (_ : int) = 1
 
+    [<SecT("_ ->^L _")>]
+    let id (s : int) = s
 
-module Main =
-    [<EntryPoint>]
-    let main _ =
-        Policy.LogS "Foobar"
-        0 // return an integer exit code
+module Application =
+    let bar = id 1
+    //Policy.id 1
